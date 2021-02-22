@@ -1,0 +1,6 @@
+---
+- name: working with serial
+  hosts: all
+  tasks:
+    - name: printing the server name
+      command: hostname

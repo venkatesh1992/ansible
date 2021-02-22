@@ -1,0 +1,9 @@
+---
+- name: working with variables
+  hosts: server1
+  vars:
+    date: "16th Feb"
+
+  tasks:
+    - name: printing variable value
+      command: echo "{{date}}"

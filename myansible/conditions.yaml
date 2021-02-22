@@ -1,0 +1,26 @@
+---
+- name: working with conditions
+  hosts: server1
+  vars:
+    val1: 15
+
+  tasks:
+    - name: working with == operator
+      command: echo "Hi I am == operator"
+      when: ansible_distribution=="amazon"
+
+    - name: working with and operator
+      command: echo "Hi I am And operator"
+      when: ansible_distribution=="Amazon" and ansible_os_family=="Redhat"
+
+    - name: working with or operator
+      command: echo "Hi I am OR operator"
+      when: ansible_distribution=="amazon" or ansible_os_family=="Redhat"
+
+    - name: working with relational operators
+      command: echo "Hi I'm Relational operator"
+      when: val1 <= 10
+
+    - name: is batch7 defined
+      command: echo "Hi I am dvsbatch7 and subject is {{ subject }}"
+      when: subject is defined

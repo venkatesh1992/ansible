@@ -1,0 +1,9 @@
+---
+- name: working with script modules
+  hosts: localhost
+  tasks:
+    - name: executing scripts
+      #copy:
+        #src: /etc/hosts
+        # dest: /etc/hosts
+      shell: ./mysample.py

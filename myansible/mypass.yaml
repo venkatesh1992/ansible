@@ -1,0 +1,8 @@
+---
+- name: working with vault
+  hosts: server1
+  vars_files:
+    - myvault.yml
+  tasks:
+    - name: printing my batch name
+      command: echo "I am from {{ mybatch }}"

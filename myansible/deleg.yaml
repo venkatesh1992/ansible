@@ -1,0 +1,8 @@
+---
+- name: working with delegate_to
+  hosts: all
+  tasks:
+    - name: getting hostname
+      command: hostname
+      delegate_to: server1
+

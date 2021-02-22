@@ -1,0 +1,31 @@
+---
+- name: installing mariadb
+  yum:
+    name: "{{item}}"
+    state: present
+  loop:
+    - MySQL-python
+    - mariadb-server
+
+- name: enable mariadb service
+  service:
+    name: mariadb
+    enabled: yes
+
+- name: Restart database
+  systemd:
+    name: mariadb
+    state: restarted
+
+- name: creating mysql user
+  mysql_user:
+    name: "{{USERNAME}}"
+    password: "{{PASSWORD}}"
+    priv: '*.*:ALL'
+    state: present
+    host: '%'
+
+- name: creating mysql database
+  mysql_db:
+    name: "{{DBNAME}}"
+    state: present

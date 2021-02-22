@@ -1,0 +1,11 @@
+---
+- name: working with modules
+  hosts: all
+  tasks:
+    - name: creating an empty file
+      file:
+        path: /tmp/dvs7.txt
+        owner: ec2-user
+        mode: 644
+        group: root
+        state: touch

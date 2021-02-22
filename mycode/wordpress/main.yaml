@@ -1,0 +1,14 @@
+---
+- name: configuring database
+  hosts: dbserver
+  vars_files:
+    - vars/myvars.yaml
+  roles:
+    - db
+
+- name: configuring wordpress
+  hosts: appserver
+  vars_files:
+    - vars/myvars.yaml
+  roles:
+    - app

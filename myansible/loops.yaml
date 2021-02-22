@@ -1,0 +1,31 @@
+---
+- name: working with loops
+  hosts: server1
+  tasks:
+    - name: working with with_items
+      command: echo " Hi  I am {{ item }}"
+      with_items: [10,20,30,40]
+      tags: t1
+
+    - name: working with with_fileglob
+      command: echo "Hi I am from with_fileglob':' {{ item }}"
+      with_fileglob:
+        - "/tmp/*"
+      tags: t2
+
+    - name: working with with_lines
+      command: echo "i I am with with_lines {{ item }}"
+      with_lines:
+        - cat /etc/passwd
+      tags: t3
+
+    - name: working with with_dict
+      command: echo "Hi My key is {{ item.key }} and my value is {{ item.value }}"
+      with_dict:
+        - "{{ ansible_default_ipv4 }}"
+      tags: t4
+
+    - name: working with with_sequence
+      command: echo "Hi I'm from with_sequence {{ item}}"
+      with_sequence: start=1 end=4
+      tags: t5

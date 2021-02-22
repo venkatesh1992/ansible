@@ -1,0 +1,7 @@
+---
+- name : myplaybook
+  hosts : server1
+  tasks:
+    - name: printing hostname
+      command: hostname
+

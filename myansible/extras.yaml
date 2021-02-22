@@ -1,0 +1,10 @@
+---
+- name: working with special cases
+  hosts: server1
+  tasks:
+    - name: executing script
+      shell: ./mysample.py
+      ignore_errors: true
+
+    - name: working with ignore case
+      command: echo "Hi I am ignoring"

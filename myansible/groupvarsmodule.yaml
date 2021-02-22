@@ -1,0 +1,7 @@
+---
+- name: working with variables
+  hosts: all
+
+  tasks:
+    - name: printing variable value
+      command: echo "{{month}}"

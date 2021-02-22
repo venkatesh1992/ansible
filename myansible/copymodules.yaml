@@ -1,0 +1,8 @@
+---
+- name: working with modules
+  hosts: all
+  tasks:
+    - name: copying host files to sever1 and server2
+      copy:
+        src: /etc/hosts
+        dest: /etc/hosts

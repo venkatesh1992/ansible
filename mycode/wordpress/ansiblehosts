@@ -1,0 +1,12 @@
+[dev]
+server1
+server2
+[prod]
+server2
+[dvs]
+server2
+[dbserver]
+dbserver
+[appserver]
+appserver
+

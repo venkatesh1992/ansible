@@ -1,0 +1,5 @@
+---
+USERNAME: 'admin'
+PASSWORD: 'admin123'
+DBNAME: 'dvsdevops'
+DBSERVER: '172.31.54.180'

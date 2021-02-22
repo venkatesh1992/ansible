@@ -1,0 +1,16 @@
+---
+- name: working with script modules
+  hosts: all
+  tasks:
+    - name: copy scripts
+      copy:
+        src: ./mysample.py
+        dest: /tmp
+
+    - name: executing script
+      shell: python /tmp/mysample.py
+      register: myoutput
+
+    - name: working with debug
+      debug: msg="{{myoutput.stdout_lines[2]}}"
+

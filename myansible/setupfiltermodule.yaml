@@ -1,0 +1,9 @@
+---
+- name: working with setup
+  hosts: server1
+  tasks:
+    - name: setup output
+      setup: filter="ansible_os_family"
+
+    - name: debug
+      debug: msg="{{ansible_os_family}}"

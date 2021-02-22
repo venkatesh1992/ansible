@@ -1,0 +1,9 @@
+---
+- name: working with variables
+  hosts: server1
+  vars_files:
+    - myvariables.yaml
+
+  tasks:
+    - name: printing variable value
+      command: echo "{{subject,var1,var2}}"
